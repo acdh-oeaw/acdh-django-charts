@@ -43,7 +43,7 @@ coverage: ## check code coverage quickly with the default Python
 	open htmlcov/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/django-charts.rst
+	rm -f docs/acdh-django-charts.rst
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ charts
 	$(MAKE) -C docs clean

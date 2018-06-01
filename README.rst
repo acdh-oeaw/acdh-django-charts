@@ -2,28 +2,28 @@
 django_charts
 =============================
 
-.. image:: https://badge.fury.io/py/django-charts.svg
-    :target: https://badge.fury.io/py/django-charts
+.. image:: https://badge.fury.io/py/acdh-django-charts.svg
+    :target: https://badge.fury.io/py/acdh-django-charts
 
-.. image:: https://travis-ci.org/csae8092/django-charts.svg?branch=master
-    :target: https://travis-ci.org/csae8092/django-charts
+.. image:: https://travis-ci.org/acdh-oeaw/acdh-django-charts.svg?branch=master
+    :target: https://travis-ci.org/acdh-oeaw/acdh-django-charts
 
-.. image:: https://codecov.io/gh/csae8092/django-charts/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/csae8092/django-charts
+.. image:: https://codecov.io/gh/acdh-oeaw/acdh-django-charts/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/acdh-oeaw/acdh-django-charts
 
 An app to explore your data through charts based on Highcharts.js
 
 Documentation
 -------------
 
-The full documentation is at https://django-charts.readthedocs.io.
+The full documentation is at https://acdh-django-charts.readthedocs.io.
 
 Quickstart
 ----------
 
 Install django_charts::
 
-    pip install django-charts
+    pip install acdh-django-charts
 
 Add it to your `INSTALLED_APPS`:
 

@@ -4,9 +4,9 @@ Installation
 
 At the command line::
 
-    $ easy_install django-charts
+    $ easy_install acdh-django-charts
 
 Or, if you have virtualenvwrapper installed::
 
-    $ mkvirtualenv django-charts
-    $ pip install django-charts
+    $ mkvirtualenv acdh-django-charts
+    $ pip install acdh-django-charts

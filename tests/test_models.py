@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-test_django-charts
+test_acdh-django-charts
 ------------
 
-Tests for `django-charts` models module.
+Tests for `acdh-django-charts` models module.
 """
 
 from django.test import TestCase

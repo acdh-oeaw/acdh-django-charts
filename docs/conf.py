@@ -173,7 +173,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'django-chartsdoc'
+htmlhelp_basename = 'acdh-django-chartsdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -192,7 +192,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'django-charts.tex', u'django_charts Documentation',
+  ('index', 'acdh-django-charts.tex', u'django_charts Documentation',
    u'Peter Andorfer', 'manual'),
 ]
 
@@ -222,7 +222,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'django-charts', u'django_charts Documentation',
+    ('index', 'acdh-django-charts', u'django_charts Documentation',
      [u'Peter Andorfer'], 1)
 ]
 
@@ -236,8 +236,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'django-charts', u'django_charts Documentation',
-   u'Peter Andorfer', 'django-charts', 'One line description of project.',
+  ('index', 'acdh-django-charts', u'django_charts Documentation',
+   u'Peter Andorfer', 'acdh-django-charts', 'One line description of project.',
    'Miscellaneous'),
 ]
 

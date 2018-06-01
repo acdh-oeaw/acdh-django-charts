@@ -45,13 +45,13 @@ readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
-    name='django-charts',
+    name='acdh-django-charts',
     version=version,
     description="""An app to explore your data through charts based on Highcharts.js""",
     long_description=readme + '\n\n' + history,
     author='Peter Andorfer',
     author_email='peter.andorfer@oeaw.ac.at',
-    url='https://github.com/acdh-oeaw/django-charts',
+    url='https://github.com/acdh-oeaw/acdh-django-charts',
     packages=[
         'charts',
     ],
@@ -59,7 +59,7 @@ setup(
     install_requires=["django-model-utils>=2.0", ],
     license="MIT",
     zip_safe=False,
-    keywords='django-charts',
+    keywords='acdh-django-charts',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Framework :: Django :: 2.0',
