@@ -63,12 +63,13 @@ Configuration
 ToDo...
 
 
-Build
+Build and publish
 -----
 
 .. code-block:: console
 
     python setup.py sdist bdist_wheel
+    twine upload dist/*
 
 
 
