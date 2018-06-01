@@ -48,6 +48,15 @@ Add django_charts's URL patterns:
         ...
     ]
 
+
+Build
+-----
+
+.. code-block:: console
+
+    python setup.py sdist bdist_wheel
+
+
 Features
 --------
 
