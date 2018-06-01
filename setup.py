@@ -56,7 +56,7 @@ setup(
         'charts',
     ],
     include_package_data=True,
-    install_requires=["django-model-utils>=2.0", ],
+    install_requires=[],
     license="MIT",
     zip_safe=False,
     keywords='acdh-django-charts',
