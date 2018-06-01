@@ -31,7 +31,7 @@ Add it to your `INSTALLED_APPS`:
 
     INSTALLED_APPS = (
         ...
-        'charts.apps.ChartsConfig',
+        'charts',
         ...
     )
 
@@ -39,14 +39,28 @@ Add django_charts's URL patterns:
 
 .. code-block:: python
 
-    from charts import urls as charts_urls
-
-
     urlpatterns = [
         ...
-        url(r'^charts/', include(charts_urls, namespace='charts')),
+        url(r'^charts/', include('charts.urls', namespace='charts')),
         ...
     ]
+
+By default the app's templates extend a base template `webpage/base.html`. To ovveride this, just define a `CHARTS_BASE_TEMPLATE` variable on your project's `settings.py` like e.g:
+
+.. code-block:: python
+
+    CHARTS_BASE_TEMPLATE = 'base.html'
+
+To link to the application's 'chart-selector-view' you can add something like the snippet below to your e.g. base-template:
+
+.. code-block:: html
+
+    <a href="{% url 'charts:chart_selector' %}">Charts</a>
+
+Configuration
+----
+
+ToDo...
 
 
 Build
@@ -55,6 +69,7 @@ Build
 .. code-block:: console
 
     python setup.py sdist bdist_wheel
+
 
 
 Features
