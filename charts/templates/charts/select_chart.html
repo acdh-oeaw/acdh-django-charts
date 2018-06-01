@@ -1,0 +1,52 @@
+{% extends "webpage/base.html" %}
+{% load staticfiles %}
+{% load django_tables2 crispy_forms_tags %}
+
+{% block content %}
+<div class="alert alert-warning alert-dismissable">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Warning!</strong> This overview and the related charts are still work in progress.
+</div>
+<div class="panel panel-default">
+        <div class="panel-heading detail-heading">
+            <h1 style="text-align:center;"><b>Make your choice</b></h1>
+        </div>
+
+
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Property to visualize
+            </th>
+            <th>
+                What will it show
+            </th>
+            <th>
+                Type of visualization
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for x in object_list %}
+        <tr>
+            <td>
+                {{ x.label }}
+            </td>
+            <td>
+                {{ x.help_text }}
+            </td>
+            <td>
+                {% for chart in x.chart_types.all  %}
+                <a href="{% url 'charts:dynchart' model_name=x.model_name property=x.field_path charttype=chart.name %}">
+                    {{ chart.icon | safe }}
+                </a>
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

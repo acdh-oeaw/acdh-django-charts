@@ -1,0 +1,114 @@
+{% extends "webpage/base.html" %}
+{% load staticfiles %}
+{% block Titel %}
+    {{ data.title }}
+{% endblock %}
+
+{% block scriptHeader %}
+    <!--highcharts -->
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <!--highcharts END -->
+{% endblock %}
+{% block content %}
+{% if fatal_error %}
+<h1>{{ error_msg|safe }}</h1>
+{% else %}
+<div class="container">
+
+    <div class="panel panel-default">
+        <div class="panel-heading" style="text-align:center;">
+            <h1>{{ data.title }}</h1>
+            <legend>{{ data.items }}</legend>
+            <!--<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myFilter" title="click to add filter">
+                <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+            </button>-->
+           <button  type="button" class="btn btn-default" data-toggle="collapse" data-target="#howtocite" id="howtocite-btn">JSON data</button>
+
+     <div id="howtocite" class="collapse">
+     <p>{{data}}</p>
+     </div>
+        </div>
+        <div class="panel-body">
+            <div id="bar"></div>
+        </div>
+        {% if error %}
+            <h4>{{ error_msg|safe }}</h4>
+        {% endif %}
+    </div>
+
+
+
+<script>
+    $(document).ready(function() {
+        var payload = {{ data.payload | safe }}
+        console.log(payload)
+        $(function () {
+            $('#bar').highcharts({
+            chart: {
+                zoomType: 'x',
+                type: '{{ charttype }}',
+                options3d: {
+                        enabled: false,
+                        alpha: 20
+                    }
+            },
+            title: {
+                text: ""
+                },
+            subtitle: {
+                text: "{{ data.subtitle|safe }}{% if charttype == 'pie' %} <br/> {% else %}<br/><small>Click and drag in the plot area to zoom in </small> {% endif %}"
+                },
+            xAxis: {
+                type: 'category',
+                title: {
+                text: {% if charttype == 'bar' %} "{{data.legendy}}" {% else %} "{{data.legendx}}" {% endif %}
+            },
+                labels: {
+                    rotation: -45,
+                    style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+            yAxis: {
+                // type: 'category',
+                min: "{{data.ymin}}",
+                title: {
+                text:{% if charttype == 'bar' %} "{{data.legendx}}" {% else %} "{{data.legendy}}" {% endif %}
+                }
+            },
+            legend: {
+                enabled: true
+                },
+            tooltip: {
+            },
+            series: [{
+            name: "{{ data.measuredObject }}",
+            data: payload,
+            dataLabels: {
+            enabled: false,
+            rotation: 0,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+            fontSize: '13px',
+            fontFamily: 'Verdana, sans-serif'
+            }
+            }
+        }]
+    });
+    });
+});
+</script>
+
+
+
+</div>
+{% endif %}
+{% endblock %}
