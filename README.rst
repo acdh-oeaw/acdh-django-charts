@@ -44,7 +44,7 @@ Add django_charts's URL patterns:
 
     urlpatterns = [
         ...
-        url(r'^', include(charts_urls)),
+        url(r'^charts/', include(charts_urls, namespace='charts')),
         ...
     ]
 
