@@ -60,7 +60,8 @@ To link to the application's 'chart-selector-view' you can add something like th
 Configuration
 ----
 
-ToDo...
+To visualize any property of your model you have to pass in the models name (lowercase), the field-path (using django's lookup syntax `__` to follow foreign key and many2many relations) and the chart type (bar|line|pie) via keyword arguments to the `charts.views.DynChartView()`. In case those params are valid (i.d. the model and the lookup path acutally exist) the according chart should be drawn. But be aware that this only works if your project's `DEBUG` settings are set to `True`.
+As **recomended** alternative you should create `ChartConfig` objects for each property/model you'd like to explore via django admin-backend.
 
 
 Build and publish
@@ -76,7 +77,8 @@ Build and publish
 Features
 --------
 
-* TODO
+* Visualizes aggregated values of your models as charts (pie/bar/line) using https://www.highcharts.com/
+* Charts can be configured via admin backend (see Configuration Section)
 
 Running Tests
 -------------

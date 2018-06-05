@@ -3,6 +3,11 @@
 History
 -------
 
+0.3.0 (2018-06-05)
+++++++++++++++++++
+
+* In case of DEBUG=False only fieldpaths/models can be explored which are registerd in dedicated ChartConfig objects.
+
 0.2.0 (2018-06-01)
 ++++++++++++++++++
 

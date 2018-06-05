@@ -60,6 +60,11 @@ class DynChartView(TemplateView):
                 'label': 'not defined',
                 'help_text': 'not defined'
             }
+            if settings.DEBUG:
+                pass
+            else:
+                context['fatal_error'] = True
+                return context
 
         context['charttype'] = self.kwargs['charttype']
         modelname = ct.__name__
