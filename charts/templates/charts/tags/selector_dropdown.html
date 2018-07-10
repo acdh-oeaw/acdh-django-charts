@@ -1,0 +1,16 @@
+<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+    Visualize <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu">
+        {% for x in vis_list %}
+            <li>
+                <a class="dropdown-item" href="/browsing/download/?" title="{{ x.help_text }}">
+                    {{ x.label }}
+                    {% for y in x.chart_types.all %}
+                        <a href="?{{ request.GET.urlencode }}&charttype={{ y }}&property={{ x.field_path }}">{{ y }}</a>
+                    {% endfor %}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

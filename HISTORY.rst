@@ -3,6 +3,11 @@
 History
 -------
 
+0.4.0 (2018-07-10)
+++++++++++++++++++
+
+* refactoring of templates by introducing template tags
+
 0.3.0 (2018-06-13)
 ++++++++++++++++++
 
