@@ -3,7 +3,12 @@
 History
 -------
 
-0.4.0 (2018-07-12)
+0.5.0 (2018-10-25)
+++++++++++++++++++
+
+* added `app_name` param to ChartConfig to avoid ambiguity in case models in different apps do have the same name.
+
+0.4.1 (2018-07-12)
 ++++++++++++++++++
 
 * minor change in dropdown template tag

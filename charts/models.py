@@ -24,6 +24,10 @@ class ChartConfig(models.Model):
         max_length=255, blank=True,
         help_text="The name of the model class you's like to analyse."
     )
+    app_name = models.CharField(
+        max_length=255, blank=True,
+        help_text="The name of the app where the model you'd like to analyse is defined."
+    )
     label = models.CharField(
         max_length=255, blank=True, help_text="A label of the chart."
     )

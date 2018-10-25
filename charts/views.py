@@ -25,7 +25,7 @@ class ChartSelector(ListView):
         return context
 
 
-def create_payload(model_name, property_name, charttype, qs):
+def create_payload(model_name, property_name, charttype, qs, app_label=None):
 
     """ creates a dict which can be processed by highcharts"""
 
@@ -34,7 +34,9 @@ def create_payload(model_name, property_name, charttype, qs):
     objects = qs
 
     try:
-        ct = ContentType.objects.get(model=model_name).model_class()
+        ct = ContentType.objects.get(
+            app_label=app_label, model=model_name
+        ).model_class()
         modelname = ct.__name__
     except ObjectDoesNotExist:
         context['fatal_error'] = True
@@ -45,7 +47,8 @@ def create_payload(model_name, property_name, charttype, qs):
     try:
         chart = ChartConfig.objects.get(
             field_path=property_name,
-            model_name=model_name
+            model_name=model_name,
+            app_name=app_label
         )
         chart = chart.__dict__
     except ObjectDoesNotExist:
