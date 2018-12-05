@@ -63,6 +63,30 @@ Configuration
 To visualize any property of your model you have to pass in the models name (lowercase), the field-path (using django's lookup syntax `__` to follow foreign key and many2many relations) and the chart type (bar|line|pie) via keyword arguments to the `charts.views.DynChartView()`. In case those params are valid (i.d. the model and the lookup path acutally exist) the according chart should be drawn. But be aware that this only works if your project's `DEBUG` settings are set to `True`.
 As **recomended** alternative you should create `ChartConfig` objects for each property/model you'd like to explore via django admin-backend.
 
+management commands
+----
+
+The package ships with a management command to
+
+* create/delete chartconfig objects (Bar, Pie, Linecharts)
+
+.. code-block:: console
+
+    python manage.py create_charttypes
+
+.. code-block:: console
+
+    python manage.py delete_charttypes
+
+* create/delete ChartConfig objects per application
+
+.. code-block:: console
+
+    python manage.py create_charts <app_name>
+
+.. code-block:: console
+
+    python manage.py delete_charts <app_name>
 
 Build and publish
 -----

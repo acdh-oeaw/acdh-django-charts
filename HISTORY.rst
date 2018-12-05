@@ -3,6 +3,11 @@
 History
 -------
 
+0.5.0 (2018-05-12)
+++++++++++++++++++
+
+* added management commands to create ChartType and ChartConfig objects. 
+
 0.5.0 (2018-10-25)
 ++++++++++++++++++
 
