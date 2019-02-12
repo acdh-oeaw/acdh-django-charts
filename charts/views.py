@@ -1,5 +1,7 @@
 import json
 
+from collections import Counter
+
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist, FieldError
 from django.contrib.contenttypes.models import ContentType
@@ -66,14 +68,17 @@ def create_payload(model_name, property_name, charttype, qs, app_label=None):
             pass
         else:
             context['fatal_error'] = True
-
+# https://stackoverflow.com/questions/3432673/get-distinct-values-of-queryset-by-field
     try:
-        for x in qs.values(property_name).annotate(
-                amount=Count(property_name)).order_by(property_name):
-            if x[property_name]:
-                payload.append(["{}".format(x[property_name]), x['amount']])
-            else:
-                payload.append(['None', x['amount']])
+        values = qs.values(property_name)
+        result = dict(Counter(
+            [x[property_name] for x in list(values)]
+        ))
+        try:
+            result['Field not populated'] = result.pop(None)
+        except KeyError:
+            pass
+        payload = [list(x) for x in list(result.items())]
         context['all'] = ct.objects.count()
         if chart['legend_x']:
             legendx = chart['legend_x']

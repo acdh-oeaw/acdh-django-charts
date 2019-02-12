@@ -3,6 +3,11 @@
 History
 -------
 
+0.5.3 (2019-02-12)
+++++++++++++++++++
+
+* reworte code to fetch payload data to avoid mysterious duplicated values
+
 0.5.2 (2018-12-18)
 ++++++++++++++++++
 
