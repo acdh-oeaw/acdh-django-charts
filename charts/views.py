@@ -72,7 +72,7 @@ def create_payload(model_name, property_name, charttype, qs, app_label=None):
     try:
         values = qs.values(property_name)
         result = dict(Counter(
-            [x[property_name] for x in list(values)]
+            [f"{x[property_name]}" for x in list(values)]
         ))
         try:
             result['Field not populated'] = result.pop(None)

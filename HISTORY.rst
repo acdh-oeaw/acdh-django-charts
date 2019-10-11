@@ -3,6 +3,11 @@
 History
 -------
 
+0.5.4 (2019-10-11)
+++++++++++++++++++
+
+* values always returned as strings -> BooleanFields are displayed now
+
 0.5.3 (2019-02-12)
 ++++++++++++++++++
 
