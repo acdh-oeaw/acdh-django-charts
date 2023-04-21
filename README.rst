@@ -58,13 +58,13 @@ To link to the application's 'chart-selector-view' you can add something like th
     <a href="{% url 'charts:chart_selector' %}">Charts</a>
 
 Configuration
-----
+-------------
 
 To visualize any property of your model you have to pass in the models name (lowercase), the field-path (using django's lookup syntax `__` to follow foreign key and many2many relations) and the chart type (bar|line|pie) via keyword arguments to the `charts.views.DynChartView()`. In case those params are valid (i.d. the model and the lookup path acutally exist) the according chart should be drawn. But be aware that this only works if your project's `DEBUG` settings are set to `True`.
 As **recomended** alternative you should create `ChartConfig` objects for each property/model you'd like to explore via django admin-backend.
 
 management commands
-----
+-------------------
 
 The package ships with a management command to
 
@@ -89,7 +89,7 @@ The package ships with a management command to
     python manage.py delete_charts <app_name>
 
 Build and publish
------
+-----------------
 
 .. code-block:: console
 
